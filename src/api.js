@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000/api";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "https://deepthought-culturetech.onrender.com/api";
 
 const client = axios.create({
   baseURL: API_BASE_URL,
@@ -53,7 +53,7 @@ export const api = {
       throw new Error(toErrorMessage(error));
     }
   },
-  
+
   getSalaryEntries: async () => {
     const { data } = await client.get("/salaries");
     return data;
